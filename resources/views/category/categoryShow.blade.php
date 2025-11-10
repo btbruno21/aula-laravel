@@ -1,21 +1,21 @@
 @extends('layout')
 @section('content')
 @if(session()->has('message'))
-    {{session()->get('message')}}
+{{session()->get('message')}}
 @endif
 <form action="{{route('category.destroy', $category->id)}}" method="POST">
-@csrf
-@method('DELETE')
+    @csrf
+    @method('DELETE')
     <legend>Mostrar Categoria</legend>
     <div class="mb-3">
         <label for="disableTextInput" class="form-label">Nome</label>
-        <input type="text" id="disableTextInput" name="name" class="form-control" placeholder="{{$category->name}}">
+        <input type="text" id="disableTextInput" name="name" class="form-control" value="{{$category->name}}" readonly>
     </div>
-     <div class="mb-3">
+    <div class="mb-3">
         <label for="disableTextInput" class="form-label">Descrição</label>
-        <input type="text" id="disableTextInput" name="description" class="form-control" placeholder="{{$category->description}}">
+        <input type="text" id="disableTextInput" name="description" class="form-control" value="{{$category->description}}" readonly>
     </div>
     <button type="submit" class="btn btn-danger">Excluir</button>
-   
-    </form>
-    @endsection
+
+</form>
+@endsection

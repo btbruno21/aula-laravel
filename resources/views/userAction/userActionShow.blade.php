@@ -1,31 +1,31 @@
 @extends('layout')
 @section('content')
 @if(session()->has('message'))
-    {{session()->get('message')}}
+{{session()->get('message')}}
 @endif
 <form action="{{--route('useraction.destroy')--}}" method="POST">
-@csrf
+    @csrf
     <legend>Adicionar Ação do usuário</legend>
     <div class="mb-3">
         <label for="user">Escolha um usuário:</label>
-        <input type="text" class="form-select" aria-label="Default select example" name="user" placeholder="{{$userActions->user_id}}">
+        <select class="form-select" aria-label="Default select example" name="user">
+            <option value="{{$user_id->id}}">{{$user_id->name}}</option>
+        </select>
     </div>
-     <div class="mb-3">
-    <label for="action">Escolha uma Ação:</label>
-        <input type="text" class="form-select" aria-label="Default select example" name="action" placeholder="{{$userActions->action_id}}">
+    <div class="mb-3">
+        <label for="action">Escolha uma Ação:</label>
+        <select class="form-select" aria-label="Default select example" name="action">
+            <option value="{{$action_id->id}}">{{$action_id->title}}</option>
+        </select>
     </div>
-     <!-- <div class="mb-3">
+    <div class="mb-3">
         <label for="disableTextInput" class="form-label">Quantidade</label>
-        <input type="number" id="disableTextInput" name="quantity" class="form-control" value="">
+        <input type="number" id="disableTextInput" name="quantity" class="form-control" value="{{$userActions->quantity}}" readonly>
     </div>
     <div class="mb-3">
         <label for="disableTextInput" class="form-label">Data</label>
-        <input type="date" id="disableTextInput" name="date" class="form-control" value="">
-    </div> -->
-   
-        
-    
-    <button type="submit" class="btn btn-primary">Salvar</button>
-   
-    </form>
-    @endsection
+        <input type="text" id="disableTextInput" name="quantity" class="form-control" value="{{ \Carbon\Carbon::parse($userActions->date)->format('d/m/Y') }}" readonly>
+    </div>
+    <button type="submit" class="btn btn-danger">Excluir</button>
+</form>
+@endsection

@@ -100,7 +100,7 @@ class ActionController extends Controller
      */
     public function update(Request $request, string $id)
     {
-         $action = Actions::findOrFail($id);
+        $action = Actions::findOrFail($id);
         $update = $action->update($request->except(['_token', '_method']));
         if ($update) {
             return redirect()->route('action.index');

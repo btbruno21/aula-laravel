@@ -19,20 +19,20 @@
     <legend>Monstrando a Ação</legend>
     <div class="mb-3">
         <label for="disableTextInput" class="form-label">Titulo</label>
-        <input type="text" id="disableTextInput" name="title" class="form-control" placeholder="{{$action->title}}">
+        <input type="text" id="disableTextInput" name="title" class="form-control" value="{{$action->title}}" readonly>
     </div>
      <div class="mb-3">
         <label for="disableTextInput" class="form-label">Descrição</label>
-        <input type="text" id="disableTextInput" name="description" class="form-control" placeholder="{{$action->description}}">
+        <input type="text" id="disableTextInput" name="description" class="form-control" value="{{$action->description}}" readonly>
     </div>
      <div class="mb-3">
         <label for="disableTextInput" class="form-label">Categoria</label>
-        <input type="text" id="disableTextInput" name="category" class="form-control" placeholder="{{$category_id->name}}">
+        <input type="text" id="disableTextInput" name="category" class="form-control" value="{{$category_id->name}}" readonly>
     </div>
      
      <div class="mb-3">
         <label for="disableTextInput" class="form-label">Pontos</label>
-        <input type="text" id="disableTextInput" name="points" class="form-control" placeholder="{{$action->points}}">
+        <input type="text" id="disableTextInput" name="points" class="form-control" value="{{$action->points}}" readonly>
     </div>
    
         

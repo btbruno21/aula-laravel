@@ -17,6 +17,8 @@
                 <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
                 <li class="nav-item"><a href="{{route('category.index')}}" class="nav-link">Categorias</a></li>
                 <li class="nav-item"><a href="{{route('category.create')}}" class="nav-link">Criar categorias</a></li>
+                <li class="nav-item"><a href="{{route('reward.index')}}" class="nav-link">Recompensas</a></li>
+                <li class="nav-item"><a href="{{route('reward.create')}}" class="nav-link">Criar recompensas</a></li>
                 <li class="nav-item"><a href="{{route('action.index')}}" class="nav-link">Ações</a></li>
                 <li class="nav-item"><a href="{{route('action.create')}}" class="nav-link">Criar ações</a></li>
                 <li class="nav-item"><a href="{{route('useraction.index')}}" class="nav-link">Ações do usuário</a></li>
