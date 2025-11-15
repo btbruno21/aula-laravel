@@ -1,5 +1,8 @@
 @extends('layout')
 @section('content')
+<div class="text-center my-3">
+    <a href="{{ route('useraction.create') }}" class="btn btn-primary btn-sm mb-3 py-2 px-3 fs-6">Criar ações do usuário</a>
+</div>
 <table class="table table-dark table-striped">
   <thead>
     <tr>

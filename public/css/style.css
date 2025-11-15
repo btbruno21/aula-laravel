@@ -1,0 +1,10 @@
+.py-8 {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+}
+/* Remove as setinhas */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}

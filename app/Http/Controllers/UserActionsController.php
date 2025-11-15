@@ -85,8 +85,8 @@ class UserActionsController extends Controller
     public function update(Request $request, string $id)
     {
         $request->validate([
-            'user' => 'required',
-            'action' => 'required',
+            'user_id' => 'required',
+            'action_id' => 'required',
             'quantity' => 'required|integer|min:1',
             'date' => 'required|date',
         ]);
@@ -94,6 +94,7 @@ class UserActionsController extends Controller
         $userActions = UserActions::findOrFail($id);
 
         $updated = $userActions->update($request->except(['_token', '_method']));
+        // dd($request->all());
         if ($updated) {
             return redirect()->route('useraction.index');
         } else {
@@ -104,8 +105,10 @@ class UserActionsController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(UserActions $userActions)
+    public function destroy(string $id)
     {
-        //
+        $userAction = UserActions::findOrFail($id);
+        $userAction->delete();
+        return redirect()->route('useraction.index');
     }
 }

@@ -15,10 +15,10 @@
 <form action="{{route('useraction.update',$userActions->id)}}" method="POST">
   @csrf
   @method('PUT')
-  <legend>Adicionar Ação do usuário</legend>
+  <legend>Editar Ação do usuário</legend>
   <div class="mb-3">
     <label for="user">Escolha um usuário:</label>
-    <select class="form-select" aria-label="Default select example" name="user">
+    <select class="form-select" aria-label="Default select example" name="user_id">
       <option value="{{$user_id->id}}">{{$user_id->name}}</option>
       @foreach($user as $us)
       <option value="{{$us->id}}">{{$us->name}}</option>
@@ -27,7 +27,7 @@
   </div>
   <div class="mb-3">
     <label for="action">Escolha uma Ação:</label>
-    <select class="form-select" aria-label="Default select example" name="action">
+    <select class="form-select" aria-label="Default select example" name="action_id">
       <option value="{{$action_id->id}}">{{$action_id->title}}</option>
       @foreach($action as $at)
       <option value="{{$at->id}}">{{$at->title}}</option>
@@ -42,9 +42,6 @@
     <label for="disableTextInput" class="form-label">Data</label>
     <input type="date" id="disableTextInput" name="date" class="form-control" value="{{$userActions->date}}">
   </div>
-
-
-
   <button type="submit" class="btn btn-primary">Salvar</button>
 
 </form>

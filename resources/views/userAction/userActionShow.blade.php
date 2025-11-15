@@ -3,9 +3,10 @@
 @if(session()->has('message'))
 {{session()->get('message')}}
 @endif
-<form action="{{--route('useraction.destroy')--}}" method="POST">
+<form action="{{route('useraction.destroy', $userActions->id)}}" method="POST">
     @csrf
-    <legend>Adicionar Ação do usuário</legend>
+    @method('DELETE')
+    <legend>Mostrar ação do usuário</legend>
     <div class="mb-3">
         <label for="user">Escolha um usuário:</label>
         <select class="form-select" aria-label="Default select example" name="user">

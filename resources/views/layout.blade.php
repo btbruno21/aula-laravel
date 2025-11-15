@@ -4,45 +4,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <title>Document</title>
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 
-<body>
-    <div class="container">
+<body class="d-flex flex-column min-vh-100">
+
     <div class="container">
         <header class="d-flex justify-content-center py-3">
             <ul class="nav nav-pills">
-                <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
+                <li class="nav-item"><a href="/" class="nav-link active">Home</a></li>
                 <li class="nav-item"><a href="{{route('category.index')}}" class="nav-link">Categorias</a></li>
-                <li class="nav-item"><a href="{{route('category.create')}}" class="nav-link">Criar categorias</a></li>
                 <li class="nav-item"><a href="{{route('reward.index')}}" class="nav-link">Recompensas</a></li>
-                <li class="nav-item"><a href="{{route('reward.create')}}" class="nav-link">Criar recompensas</a></li>
                 <li class="nav-item"><a href="{{route('action.index')}}" class="nav-link">Ações</a></li>
-                <li class="nav-item"><a href="{{route('action.create')}}" class="nav-link">Criar ações</a></li>
                 <li class="nav-item"><a href="{{route('useraction.index')}}" class="nav-link">Ações do usuário</a></li>
-                <li class="nav-item"><a href="{{route('useraction.create')}}" class="nav-link">Criar ações do usuário</a></li>
             </ul>
         </header>
     </div>
-    @yield('content')
+
+    <div class="container flex-fill">
+        @yield('content')
+    </div>
+
     <div class="container">
         <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-            <div class="col-md-4 d-flex align-items-center"> <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1" aria-label="Bootstrap"> <svg class="bi" width="30" height="24" aria-hidden="true">
-                        <use xlink:href="#bootstrap"></use>
-                    </svg> </a> <span class="mb-3 mb-md-0 text-body-secondary">© 2025 Company, Inc</span> </div>
-            <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-                <li class="ms-3"><a class="text-body-secondary" href="#" aria-label="Instagram"><svg class="bi" width="24" height="24" aria-hidden="true">
-                            <use xlink:href="#instagram"></use>
-                        </svg></a></li>
-                <li class="ms-3"><a class="text-body-secondary" href="#" aria-label="Facebook"><svg class="bi" width="24" height="24">
-                            <use xlink:href="#facebook"></use>
-                        </svg></a></li>
-            </ul>
+            <div class="col-md-4 d-flex align-items-center">
+                <span class="mb-3 mb-md-0 text-body-secondary">© 2025 Company, Inc</span>
+            </div>
+            <!-- <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+                <li class="ms-3"><a class="text-body-secondary" href="#">Instagram</a></li>
+                <li class="ms-3"><a class="text-body-secondary" href="#">Facebook</a></li>
+            </ul> -->
         </footer>
     </div>
-</div>
+
 </body>
 
 </html>

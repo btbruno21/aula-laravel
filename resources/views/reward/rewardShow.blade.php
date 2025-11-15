@@ -4,7 +4,7 @@
 @if(session()->has('message'))
 {{session()->get('message')}}
 @endif
-<form action="{{route('reward.destroy',  $reward->id)}}" method="POST" class="container mt-4">
+<form action="{{route('reward.destroy',  $reward->id)}}" method="POST">
     @csrf
     @method('DELETE')
     <legend>Mostrar Categoria</legend>
